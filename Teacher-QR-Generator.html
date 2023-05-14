@@ -1,10 +1,33 @@
-
 <!DOCTYPE html>
 <html>
     <head>
         <title>Teacher Side QR Code Generate</title>
         <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
     </head>
+    <style>
+        body{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+        .Teacher-Enter{
+            margin: 0 auto;
+            margin-top: 100px;
+            width: 450px;
+            height: 150px;
+            text-align: center;
+        }    
+        #qrcode{
+            margin: 0 auto;
+            margin-top: 100px;
+            width: 500px;
+            height: 300px;
+            text-align: center;
+        }
+        img{
+            margin: 0 auto;
+        }
+    </style>
     <body>
         <div class="Teacher-Enter">
             <h1>Enter Attendance Code</h1>
@@ -17,6 +40,10 @@
         </div>
         <script>
             function generateQRCode() {
+                var disableDiv = document.getElementsByClassName("Teacher-Enter")[0];
+                var enableDiv = document.getElementById("qrcode");
+                enableDiv.style.display = "block";
+                disableDiv.style.display = "none";
                 var text = "";
                 text = text + document.getElementById('text-input').value;
                 var qrcode = new QRCode(document.getElementById("qrcode"), {
