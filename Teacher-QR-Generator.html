@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Teacher Side QR Code Generate</title>
+        <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    </head>
+    <body>
+        <div class="Teacher-Enter">
+            <h1>Enter Attendance Code</h1>
+            <label for="text-input">Attendance Code:</label>
+            <input type="text" id="text-input" placeholder="Enter Attendance Code...">
+            <button onclick="generateQRCode()">Generate QR Code</button>
+        </div>
+        <div id="qrcode" style="display: none; text-align: center;">
+            <h1>If you are a student, please use the student app to scan the QR code for regular attendance.</h1>
+        </div>
+        <script>
+            function generateQRCode() {
+                var text = "";
+                text = text + document.getElementById('text-input').value;
+                var qrcode = new QRCode(document.getElementById("qrcode"), {
+                text: text,
+                width: 256,
+                height: 256
+                });
+            }
+        </script>
+    </body>
+</html>
