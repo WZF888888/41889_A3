@@ -2,3 +2,5 @@ About this Project
 Group member:
 Changyu Wang 13715507
 
+For Web App Deploy URL
+http://43.143.164.185/IOS/Teacher-QR-Generator.html
