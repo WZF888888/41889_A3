@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--First Page-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController title="First Page" id="BV1-FR-VrT" sceneMemberID="viewController">
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwN-Cp-Nij">
+                                <rect key="frame" x="69" y="608" width="255" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="k4I-sO-vwq"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Login"/>
+                                <connections>
+                                    <segue destination="2ag-Et-73h" kind="show" id="aFM-4K-Hew"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Teacher!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B3k-Kq-gSR">
+                                <rect key="frame" x="41" y="159" width="310" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="bottom" secondItem="zwN-Cp-Nij" secondAttribute="bottom" constant="150" id="6xB-pq-F2X"/>
+                            <constraint firstItem="zwN-Cp-Nij" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="69" id="GZI-gf-YJr"/>
+                            <constraint firstItem="B3k-Kq-gSR" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="41" id="JFf-p5-4I4"/>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="B3k-Kq-gSR" secondAttribute="trailing" constant="42" id="KbP-eD-ZZU"/>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="zwN-Cp-Nij" secondAttribute="trailing" constant="69" id="TON-yk-4Tp"/>
+                            <constraint firstItem="B3k-Kq-gSR" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" constant="100" id="led-BJ-YND"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75.572519083969468" y="-27.464788732394368"/>
+        </scene>
+        <!--Login Page-->
+        <scene sceneID="Ejq-fe-0LP">
+            <objects>
+                <viewController title="Login Page" modalPresentationStyle="fullScreen" id="2ag-Et-73h" sceneMemberID="viewController">
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="ZCY-BM-sU3" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWh-s5-77G">
+                                <rect key="frame" x="57" y="152" width="83" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S3r-bF-oi4">
+                                <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Login" id="gMF-Bx-0Om"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="W3H-rp-GIB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="OBy-hf-mBx"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OYV-EE-JC1" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="936.64122137404581" y="-27.464788732394368"/>
+        </scene>
+        <!--Login Page-->
+        <scene sceneID="vl0-TM-JBu">
+            <objects>
+                <viewController title="Login Page" modalPresentationStyle="fullScreen" id="erb-CW-YKR" sceneMemberID="viewController">
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="ogX-vn-LV4" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jB2-Fd-gZF">
+                                <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Menu" id="dmZ-EN-2p1"/>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9qk-PE-0G1">
+                                <rect key="frame" x="46" y="211" width="300" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Create Attendance Assignment"/>
+                                <connections>
+                                    <segue destination="Igu-cz-smL" kind="show" id="eMZ-Qj-2Dn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4GP-ul-Liv">
+                                <rect key="frame" x="46" y="330" width="300" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Check Attendance"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rFf-Uw-huw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Edd-4u-hs1"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fnh-wT-yDH" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1822.1374045801526" y="-27.464788732394368"/>
+        </scene>
+        <!--Login Page-->
+        <scene sceneID="rlr-j3-LgY">
+            <objects>
+                <viewController title="Login Page" modalPresentationStyle="fullScreen" id="Igu-cz-smL" sceneMemberID="viewController">
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="k9i-CN-GVF" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zxs-Kl-4qK">
+                                <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Create Assignment" id="t4p-2a-1B8"/>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DiY-KZ-jep">
+                                <rect key="frame" x="83" y="314" width="227" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ilP-lp-DFa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="yAO-bJ-fLz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="44E-hK-9uR" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2742.7480916030531" y="-536.61971830985919"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
