@@ -10,6 +10,8 @@ import UIKit
 class loginViewController: UIViewController {
     
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var usernameInputTextfield: UITextField!
+    
     
 }
 
