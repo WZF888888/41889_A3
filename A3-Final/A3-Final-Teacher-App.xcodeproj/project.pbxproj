@@ -14,7 +14,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		388D976C2A18C2E10084C97E /* A3-Final.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "A3-Final.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		388D976C2A18C2E10084C97E /* A3-Final-Teacher-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "A3-Final-Teacher-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		388D976F2A18C2E10084C97E /* A3_FinalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = A3_FinalApp.swift; sourceTree = "<group>"; };
 		388D97712A18C2E10084C97E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		388D97732A18C2E20084C97E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -43,7 +43,7 @@
 		388D976D2A18C2E10084C97E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				388D976C2A18C2E10084C97E /* A3-Final.app */,
+				388D976C2A18C2E10084C97E /* A3-Final-Teacher-App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,9 +70,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		388D976B2A18C2E10084C97E /* A3-Final */ = {
+		388D976B2A18C2E10084C97E /* A3-Final-Teacher-App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 388D977A2A18C2E20084C97E /* Build configuration list for PBXNativeTarget "A3-Final" */;
+			buildConfigurationList = 388D977A2A18C2E20084C97E /* Build configuration list for PBXNativeTarget "A3-Final-Teacher-App" */;
 			buildPhases = (
 				388D97682A18C2E10084C97E /* Sources */,
 				388D97692A18C2E10084C97E /* Frameworks */,
@@ -82,9 +82,9 @@
 			);
 			dependencies = (
 			);
-			name = "A3-Final";
+			name = "A3-Final-Teacher-App";
 			productName = "A3-Final";
-			productReference = 388D976C2A18C2E10084C97E /* A3-Final.app */;
+			productReference = 388D976C2A18C2E10084C97E /* A3-Final-Teacher-App.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -102,7 +102,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 388D97672A18C2E10084C97E /* Build configuration list for PBXProject "A3-Final" */;
+			buildConfigurationList = 388D97672A18C2E10084C97E /* Build configuration list for PBXProject "A3-Final-Teacher-App" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -115,7 +115,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				388D976B2A18C2E10084C97E /* A3-Final */,
+				388D976B2A18C2E10084C97E /* A3-Final-Teacher-App */,
 			);
 		};
 /* End PBXProject section */
@@ -318,7 +318,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		388D97672A18C2E10084C97E /* Build configuration list for PBXProject "A3-Final" */ = {
+		388D97672A18C2E10084C97E /* Build configuration list for PBXProject "A3-Final-Teacher-App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				388D97782A18C2E20084C97E /* Debug */,
@@ -327,7 +327,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		388D977A2A18C2E20084C97E /* Build configuration list for PBXNativeTarget "A3-Final" */ = {
+		388D977A2A18C2E20084C97E /* Build configuration list for PBXNativeTarget "A3-Final-Teacher-App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				388D977B2A18C2E20084C97E /* Debug */,
