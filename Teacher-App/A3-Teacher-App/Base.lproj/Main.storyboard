@@ -78,8 +78,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Login"/>
                                 <connections>
-                                    <action selector="handleUserNoInput:" destination="2ag-Et-73h" eventType="touchUpInside" id="N43-SJ-5hB"/>
-                                    <action selector="loginButton:" destination="AJl-lM-vyy" eventType="touchUpInside" id="35C-Ep-fHC"/>
+                                    <action selector="handleLoginClick:" destination="2ag-Et-73h" eventType="touchUpInside" id="MRq-rk-Zky"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fyK-hw-VqI">
@@ -175,7 +174,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OYV-EE-JC1" sceneMemberID="firstResponder"/>
-                <exit id="AJl-lM-vyy" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="936.64122137404581" y="-27.464788732394368"/>
         </scene>

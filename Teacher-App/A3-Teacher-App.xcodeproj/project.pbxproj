@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		383C30E32A18DC760027A3E0 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383C30E22A18DC760027A3E0 /* loginViewController.swift */; };
+		38EF8DF22A19C1DB005382FD /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 38EF8DF12A19C1DB005382FD /* FirebaseAuth */; };
+		38EF8DF42A19C1DB005382FD /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 38EF8DF32A19C1DB005382FD /* FirebaseFirestore */; };
+		38EF8DF62A19C248005382FD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38EF8DF52A19C247005382FD /* GoogleService-Info.plist */; };
 		38F348E52A18CD080067C617 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F348E42A18CD080067C617 /* AppDelegate.swift */; };
 		38F348F02A18CD090067C617 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38F348EE2A18CD090067C617 /* Main.storyboard */; };
 		38F348F22A18CD0A0067C617 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38F348F12A18CD0A0067C617 /* Assets.xcassets */; };
@@ -16,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		383C30E22A18DC760027A3E0 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
+		38EF8DF52A19C247005382FD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		38F348E12A18CD080067C617 /* A3-Teacher-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "A3-Teacher-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		38F348E42A18CD080067C617 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38F348EF2A18CD090067C617 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -28,6 +32,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38EF8DF22A19C1DB005382FD /* FirebaseAuth in Frameworks */,
+				38EF8DF42A19C1DB005382FD /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +59,7 @@
 		38F348E32A18CD080067C617 /* A3-Teacher-App */ = {
 			isa = PBXGroup;
 			children = (
+				38EF8DF52A19C247005382FD /* GoogleService-Info.plist */,
 				383C30E22A18DC760027A3E0 /* loginViewController.swift */,
 				38F348E42A18CD080067C617 /* AppDelegate.swift */,
 				38F348EE2A18CD090067C617 /* Main.storyboard */,
@@ -78,6 +85,10 @@
 			dependencies = (
 			);
 			name = "A3-Teacher-App";
+			packageProductDependencies = (
+				38EF8DF12A19C1DB005382FD /* FirebaseAuth */,
+				38EF8DF32A19C1DB005382FD /* FirebaseFirestore */,
+			);
 			productName = "A3-Teacher-App";
 			productReference = 38F348E12A18CD080067C617 /* A3-Teacher-App.app */;
 			productType = "com.apple.product-type.application";
@@ -106,6 +117,9 @@
 				Base,
 			);
 			mainGroup = 38F348D82A18CD080067C617;
+			packageReferences = (
+				38EF8DF02A19C1DB005382FD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 38F348E22A18CD080067C617 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -121,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38F348F02A18CD090067C617 /* Main.storyboard in Resources */,
+				38EF8DF62A19C248005382FD /* GoogleService-Info.plist in Resources */,
 				38F348F22A18CD0A0067C617 /* Assets.xcassets in Resources */,
 				38F348F52A18CD0A0067C617 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -350,6 +365,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		38EF8DF02A19C1DB005382FD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		38EF8DF12A19C1DB005382FD /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 38EF8DF02A19C1DB005382FD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		38EF8DF32A19C1DB005382FD /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 38EF8DF02A19C1DB005382FD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 38F348D92A18CD080067C617 /* Project object */;
 }
