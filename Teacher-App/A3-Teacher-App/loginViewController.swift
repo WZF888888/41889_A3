@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class loginViewController: UIViewController {
     
@@ -52,6 +53,11 @@ class loginViewController: UIViewController {
         } else {
             loginButton.isEnabled = false
         }
+    }
+    
+    @IBAction func handleLoginClick(_ sender: Any) {
+        let finalUsername:String = usernameInputTextfield.text!
+        let finalPassword:String = passwordInputTextField.text!
     }
 }
 
