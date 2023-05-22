@@ -132,6 +132,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1q-gE-LuY">
+                                <rect key="frame" x="40" y="523.66666666666663" width="313" height="20.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="W3H-rp-GIB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -148,10 +154,15 @@
                             <constraint firstItem="dWh-s5-77G" firstAttribute="top" secondItem="S3r-bF-oi4" secondAttribute="bottom" constant="62" id="Iza-YD-sOl"/>
                             <constraint firstItem="W3H-rp-GIB" firstAttribute="bottom" secondItem="gAI-ov-QtS" secondAttribute="bottom" constant="75" id="Soo-qD-Evg"/>
                             <constraint firstItem="29N-ga-rKk" firstAttribute="leading" secondItem="W3H-rp-GIB" secondAttribute="leading" constant="40" id="TFq-kx-eg9"/>
+                            <constraint firstItem="W3H-rp-GIB" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dWh-s5-77G" secondAttribute="trailing" symbolic="YES" id="Tvp-Qu-7FR"/>
                             <constraint firstItem="jkX-QC-9lI" firstAttribute="top" secondItem="29N-ga-rKk" secondAttribute="bottom" constant="24" id="Xv7-2a-GoY"/>
                             <constraint firstItem="fyK-hw-VqI" firstAttribute="top" secondItem="dWh-s5-77G" secondAttribute="bottom" constant="2" id="Y4F-uQ-uzK"/>
+                            <constraint firstItem="KWr-sq-qsE" firstAttribute="top" secondItem="c1q-gE-LuY" secondAttribute="bottom" constant="83" id="aHd-gX-dCQ"/>
                             <constraint firstItem="W3H-rp-GIB" firstAttribute="trailing" secondItem="gAI-ov-QtS" secondAttribute="trailing" constant="40" id="acv-Cr-qmG"/>
+                            <constraint firstItem="c1q-gE-LuY" firstAttribute="leading" secondItem="W3H-rp-GIB" secondAttribute="leading" constant="40" id="ch7-Ow-USf"/>
+                            <constraint firstItem="W3H-rp-GIB" firstAttribute="trailing" secondItem="c1q-gE-LuY" secondAttribute="trailing" constant="40" id="eHU-1J-HiN"/>
                             <constraint firstItem="S3r-bF-oi4" firstAttribute="leading" secondItem="W3H-rp-GIB" secondAttribute="leading" id="hq6-sk-euP"/>
+                            <constraint firstItem="W3H-rp-GIB" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jai-mF-smn" secondAttribute="trailing" symbolic="YES" id="iNM-Nt-ubV"/>
                             <constraint firstItem="W3H-rp-GIB" firstAttribute="trailing" secondItem="fyK-hw-VqI" secondAttribute="trailing" constant="40" id="lk6-dq-BCi"/>
                             <constraint firstItem="fyK-hw-VqI" firstAttribute="leading" secondItem="W3H-rp-GIB" secondAttribute="leading" constant="40" id="lpg-ms-UmH"/>
                             <constraint firstItem="jkX-QC-9lI" firstAttribute="leading" secondItem="W3H-rp-GIB" secondAttribute="leading" constant="40" id="lyn-w5-7Nb"/>
@@ -170,6 +181,7 @@
                         <outlet property="errorLabel2" destination="2DZ-aD-Lbs" id="eeW-ss-Q6t"/>
                         <outlet property="loginButton" destination="KWr-sq-qsE" id="JTA-95-FZ0"/>
                         <outlet property="passwordInputTextField" destination="29N-ga-rKk" id="gLH-hl-Nhg"/>
+                        <outlet property="systemErrorLabel" destination="c1q-gE-LuY" id="mKa-KS-5z3"/>
                         <outlet property="userEmailTextfield" destination="fyK-hw-VqI" id="oMa-b8-JwU"/>
                     </connections>
                 </viewController>

@@ -15,6 +15,7 @@ class loginViewController: UIViewController {
     @IBOutlet weak var errorLabel1: UILabel!
     @IBOutlet weak var errorLabel2: UILabel!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var systemErrorLabel: UILabel!
     
     var inputTureForUsername:Bool = false;
     var inputTureForPassword:Bool = false;
@@ -63,6 +64,8 @@ class loginViewController: UIViewController {
         Auth.auth().signIn(withEmail: finalUsername, password: finalPassword){ [weak self] (authResult, error) in
             if let error = error {
                 // Handle login error
+                self!.systemErrorLabel.text = "Email or Password Not Correct!"
+                self!.systemErrorLabel.textColor = UIColor.red
                 print("Login error: \(error.localizedDescription)")
             } else {
                 // Login successful, Jump to the teacher app menu.
