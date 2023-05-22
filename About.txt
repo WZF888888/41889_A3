@@ -1,4 +1,6 @@
-About this Project
-Group member:
+About this Part of the Project
+In charge of group member:
 Changyu Wang 13715507
-
+Description:
+This is a web page that is based on html and js
+Once the teacher had input the Attendance code in the Webpage then the QR Code will be generated for the student to scan.
