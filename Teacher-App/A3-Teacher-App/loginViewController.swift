@@ -10,11 +10,12 @@ import Firebase
 
 class loginViewController: UIViewController {
     
-    @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var usernameInputTextfield: UITextField!
+    @IBOutlet weak var userEmailTextfield: UITextField!
     @IBOutlet weak var passwordInputTextField: UITextField!
     @IBOutlet weak var errorLabel1: UILabel!
     @IBOutlet weak var errorLabel2: UILabel!
+    @IBOutlet weak var loginButton: UIButton!
+    
     var inputTureForUsername:Bool = false;
     var inputTureForPassword:Bool = false;
     
@@ -23,9 +24,9 @@ class loginViewController: UIViewController {
         loginButton.isEnabled = false
     }
     
-    @IBAction func handleUserNameNoInput(_ sender: Any) {
-        if usernameInputTextfield.text == "" {
-            errorLabel1.text = "Please Enter the name in text field"
+    @IBAction func handleEmailNoInput(_ sender: Any) {
+        if userEmailTextfield.text == "" {
+            errorLabel1.text = "Please Enter the email address in text field"
             errorLabel1.textColor = UIColor.red
             inputTureForUsername = false
         } else {
@@ -56,8 +57,20 @@ class loginViewController: UIViewController {
     }
     
     @IBAction func handleLoginClick(_ sender: Any) {
-        let finalUsername:String = usernameInputTextfield.text!
+        let finalUsername:String = userEmailTextfield.text!
         let finalPassword:String = passwordInputTextField.text!
+        // Using Firebase
+        Auth.auth().signIn(withEmail: finalUsername, password: finalPassword){ [weak self] (authResult, error) in
+            if let error = error {
+                // Handle login error
+                print("Login error: \(error.localizedDescription)")
+            } else {
+                // Login successful, Jump to the teacher app menu.
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let MenuVC = storyboard.instantiateViewController(withIdentifier: "TeacherMenu")
+                self?.present(MenuVC, animated: true, completion: nil)
+            }
+        }
     }
 }
 
