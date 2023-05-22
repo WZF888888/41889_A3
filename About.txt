@@ -1,6 +1,11 @@
 About this Part of the Project
+Web base App
 In charge of group member:
 Changyu Wang 13715507
+<<<<<<< Classroom-WebApp
 Description:
 This is a web page that is based on html and js
 Once the teacher had input the Attendance code in the Webpage then the QR Code will be generated for the student to scan.
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+For Web App Deploy URL
+http://43.143.164.185/IOS/Teacher-QR-Generator.html
