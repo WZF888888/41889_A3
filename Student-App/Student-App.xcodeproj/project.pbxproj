@@ -16,7 +16,6 @@
 		850692782A1C79EF00CACAE8 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 850692772A1C79EF00CACAE8 /* FirebaseFirestore */; };
 		85AC84F62A1C6C5400F0FAB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AC84F52A1C6C5400F0FAB3 /* AppDelegate.swift */; };
 		85AC84FC2A1C6C5400F0FAB3 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AC84FB2A1C6C5400F0FAB3 /* GameScene.swift */; };
-		85AC84FE2A1C6C5400F0FAB3 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AC84FD2A1C6C5400F0FAB3 /* GameViewController.swift */; };
 		85AC85012A1C6C5400F0FAB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85AC84FF2A1C6C5400F0FAB3 /* Main.storyboard */; };
 		85AC85032A1C6C5600F0FAB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85AC85022A1C6C5600F0FAB3 /* Assets.xcassets */; };
 		85AC85062A1C6C5600F0FAB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85AC85042A1C6C5600F0FAB3 /* LaunchScreen.storyboard */; };
@@ -31,7 +30,6 @@
 		85AC84F22A1C6C5400F0FAB3 /* Student-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Student-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		85AC84F52A1C6C5400F0FAB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85AC84FB2A1C6C5400F0FAB3 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		85AC84FD2A1C6C5400F0FAB3 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		85AC85002A1C6C5400F0FAB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		85AC85022A1C6C5600F0FAB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85AC85052A1C6C5600F0FAB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -75,7 +73,6 @@
 				85AC850E2A1C6D3F00F0FAB3 /* Controller */,
 				85AC84F52A1C6C5400F0FAB3 /* AppDelegate.swift */,
 				85AC84FB2A1C6C5400F0FAB3 /* GameScene.swift */,
-				85AC84FD2A1C6C5400F0FAB3 /* GameViewController.swift */,
 				85AC85022A1C6C5600F0FAB3 /* Assets.xcassets */,
 				85AC85042A1C6C5600F0FAB3 /* LaunchScreen.storyboard */,
 			);
@@ -191,7 +188,6 @@
 				8506926B2A1C786B00CACAE8 /* StudentViewController.swift in Sources */,
 				850692692A1C785A00CACAE8 /* LoginViewController.swift in Sources */,
 				85AC84FC2A1C6C5400F0FAB3 /* GameScene.swift in Sources */,
-				85AC84FE2A1C6C5400F0FAB3 /* GameViewController.swift in Sources */,
 				85AC84F62A1C6C5400F0FAB3 /* AppDelegate.swift in Sources */,
 				8506926F2A1C788900CACAE8 /* MarkPresentViewController.swift in Sources */,
 			);
