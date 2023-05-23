@@ -55,9 +55,9 @@
 		85AC84F42A1C6C5400F0FAB3 /* Student-App */ = {
 			isa = PBXGroup;
 			children = (
-				85AC850E2A1C6D3F00F0FAB3 /* Controller */,
-				85AC850D2A1C6D3800F0FAB3 /* View */,
 				85AC850C2A1C6D3200F0FAB3 /* Model */,
+				85AC850D2A1C6D3800F0FAB3 /* View */,
+				85AC850E2A1C6D3F00F0FAB3 /* Controller */,
 				85AC84F52A1C6C5400F0FAB3 /* AppDelegate.swift */,
 				85AC84FB2A1C6C5400F0FAB3 /* GameScene.swift */,
 				85AC84FD2A1C6C5400F0FAB3 /* GameViewController.swift */,
