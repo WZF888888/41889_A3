@@ -19,6 +19,7 @@
 		85AC85012A1C6C5400F0FAB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85AC84FF2A1C6C5400F0FAB3 /* Main.storyboard */; };
 		85AC85032A1C6C5600F0FAB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85AC85022A1C6C5600F0FAB3 /* Assets.xcassets */; };
 		85AC85062A1C6C5600F0FAB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85AC85042A1C6C5600F0FAB3 /* LaunchScreen.storyboard */; };
+		85AC85112A1C805000F0FAB3 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 85AC85102A1C805000F0FAB3 /* CodeScanner */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 			files = (
 				850692762A1C79EF00CACAE8 /* FirebaseAuth in Frameworks */,
 				850692782A1C79EF00CACAE8 /* FirebaseFirestore in Frameworks */,
+				85AC85112A1C805000F0FAB3 /* CodeScanner in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +126,7 @@
 			packageProductDependencies = (
 				850692752A1C79EF00CACAE8 /* FirebaseAuth */,
 				850692772A1C79EF00CACAE8 /* FirebaseFirestore */,
+				85AC85102A1C805000F0FAB3 /* CodeScanner */,
 			);
 			productName = "Student-App";
 			productReference = 85AC84F22A1C6C5400F0FAB3 /* Student-App.app */;
@@ -155,6 +158,7 @@
 			mainGroup = 85AC84E92A1C6C5400F0FAB3;
 			packageReferences = (
 				850692742A1C79EF00CACAE8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				85AC850F2A1C805000F0FAB3 /* XCRemoteSwiftPackageReference "CodeScanner" */,
 			);
 			productRefGroup = 85AC84F32A1C6C5400F0FAB3 /* Products */;
 			projectDirPath = "";
@@ -337,12 +341,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need camera to scan QR code";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -364,12 +370,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need camera to scan QR code";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -415,6 +423,14 @@
 				minimumVersion = 10.0.0;
 			};
 		};
+		85AC850F2A1C805000F0FAB3 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -427,6 +443,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 850692742A1C79EF00CACAE8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
+		};
+		85AC85102A1C805000F0FAB3 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 85AC850F2A1C805000F0FAB3 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
