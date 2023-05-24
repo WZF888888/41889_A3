@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import Firebase
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var studentEmailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -53,10 +53,22 @@ class LoginViewController: UIViewController {
         
         present(alertController, animated: true, completion: nil)
     }
-
+    
+    @objc func textFieldDidBeginEditing(_ textField: UITextField) {
+        // set typed text color
+        textField.textColor = UIColor.black
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        studentEmailTextField.delegate = self
+        passwordTextField.delegate = self
+        
+        // secure password
+        passwordTextField.isSecureTextEntry = true
+        
     }
     
 }
