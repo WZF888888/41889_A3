@@ -21,25 +21,26 @@ class LoginViewController: UIViewController {
         Auth.auth().signIn(withEmail: studentEmail, password: password) { [weak self] (authResult, error) in
             if let error = error {
                 // Handle login error and display the error message in the login view
-                self?.displayAlert(withTitle: "Login Error", message: "Incorrect Email or Password.", completion: {
-                    // Navigate to the LoginViewController in the storyboard
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-                    self?.navigationController?.setViewControllers([loginVC], animated: true)})
+                
+                let alert = UIAlertController(title: "Login Error", message: "Incorrect Email or Password.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+                }))
+                self?.present(alert, animated: true, completion: nil)
+
             } else {
-                // Login successful, jump to the student scene
-                self?.displayAlert(withTitle: "Login Successful", message: "", completion: {})
+                // Login successful, jump to the student view
+                
+                let alert = UIAlertController(title: "Login Successful", message: "", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+                    if let studentVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "StudentViewController") as? StudentViewController {
+                        studentVC.email = studentEmail
+                        self?.navigationController?.setViewControllers([studentVC], animated: true)
+                    }
+                }))
+                self?.present(alert, animated: true, completion: nil)
+                
             }
         }
-    }
-
-    func displayAlert(withTitle title: String, message: String, completion: (() -> Void)?) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-            completion?()
-        }
-        alert.addAction(okAction)
-        present(alert, animated: true, completion: nil)
     }
     
     @IBAction func forgotButtonTapped(_ sender: Any) {

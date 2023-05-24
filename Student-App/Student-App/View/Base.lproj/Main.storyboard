@@ -58,8 +58,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Login"/>
                                 <connections>
-                                    <action selector="loginButtonTapped:" destination="2lW-xk-dW8" eventType="touchUpInside" id="P4x-rw-mm2"/>
-                                    <segue destination="vLn-fp-V0G" kind="show" identifier="goToStudent" id="jRw-Ok-ekP"/>
+                                    <action selector="loginButtonTapped:" destination="2lW-xk-dW8" eventType="touchUpInside" id="bcC-k1-4cD"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZX-XL-oT0">
@@ -124,7 +123,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V4J-xV-dmH" userLabel="Email Label">
-                                <rect key="frame" x="122" y="527" width="150" height="21"/>
+                                <rect key="frame" x="71" y="494" width="250" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -150,7 +149,7 @@
             <objects>
                 <viewController storyboardIdentifier="QRScanViewController" id="aQ1-8L-geq" customClass="QRScanViewController" customModule="Student_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bhH-9S-07Q">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9W4-0c-vV9">
@@ -177,7 +176,7 @@
             <objects>
                 <viewController storyboardIdentifier="MarkPresentViewController" id="wQs-zg-aKl" customClass="MarkPresentViewController" customModule="Student_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qIT-rz-4uu">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="NCQ-cz-Kj1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
