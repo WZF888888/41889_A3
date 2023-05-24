@@ -16,7 +16,7 @@ class StudentViewController: UIViewController {
 
     var email: String?
     var sessionTimer: Timer?
-    var remainingTime: TimeInterval = 60 * 5 // Set the desired session timeout duration in seconds
+    var remainingTime: TimeInterval = 60 * 3 // Set the desired session timeout duration in seconds
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,11 +49,15 @@ class StudentViewController: UIViewController {
 
     func logout() {
         sessionTimer?.invalidate()
-        
-        // sign out the student and navigate back to the login screen
-        if let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
-            navigationController?.setViewControllers([loginVC], animated: true)
-        }
+        // Show session timeout alert
+        let alert = UIAlertController(title: "Session Timeout", message: "Your session has expired.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            // Sign out the student and navigate back to the login screen
+            if let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
+                self.navigationController?.setViewControllers([loginVC], animated: true)
+            }
+        }))
+        present(alert, animated: true, completion: nil)
     }
 
     // remaining time in mm:ss format
