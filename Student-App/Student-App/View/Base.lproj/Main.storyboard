@@ -154,7 +154,7 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="18"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="aQ1-8L-geq" kind="show" id="T9Q-O0-wEW"/>
+                                    <segue destination="aQ1-8L-geq" kind="show" destinationCreationSelector="goToQRScan" id="T9Q-O0-wEW"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V4J-xV-dmH" userLabel="Email Label">
@@ -226,7 +226,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="markPresentButtonTapped:" destination="aQ1-8L-geq" eventType="touchUpInside" id="gpe-yb-H9A"/>
-                                    <segue destination="wQs-zg-aKl" kind="show" id="YIT-De-vlO"/>
+                                    <segue destination="wQs-zg-aKl" kind="show" destinationCreationSelector="goToMarkPresent" id="YIT-De-vlO"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Type Code" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Nt-oh-z9V">

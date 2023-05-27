@@ -66,5 +66,12 @@ class StudentViewController: UIViewController {
         let seconds = Int(totalSeconds) % 60
         return String(format: "%02d:%02d", minutes, seconds)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToQRScan" {
+            let QRVC = segue.destination as! QRScanViewController
+            QRVC.retrievedEmail = email
+        }
+    }
 
 }

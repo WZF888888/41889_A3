@@ -18,7 +18,7 @@ class MarkPresentViewController: UIViewController {
     
     @IBOutlet weak var deviceInfoLabel: UILabel!
     
-    var email: String?
+    var userEmail: String?
     var qrCodeData: String?
     
     
@@ -26,7 +26,7 @@ class MarkPresentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        emailLabel.text = email
+        emailLabel.text = userEmail
         qrCodeLabel.text = qrCodeData
         accessTimeLabel.text = getCurrentTime()
         deviceInfoLabel.text = getDeviceInfo()

@@ -13,6 +13,7 @@ class QRScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
     var qrCodeData: String?
     var captureSession: AVCaptureSession!
     var videoPreviewLayer: AVCaptureVideoPreviewLayer!
+    var retrievedEmail: String?
 
     @IBOutlet weak var typeCodeLabel: UITextField!
     
@@ -80,7 +81,7 @@ class QRScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
         // Proceed to the next view controller
         let markPresentVC = MarkPresentViewController()
         markPresentVC.qrCodeData = retrievedData
-        markPresentVC.email = email
+        markPresentVC.userEmail = retrievedEmail
         navigationController?.pushViewController(markPresentVC, animated: true)
     }
 }
