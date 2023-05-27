@@ -26,7 +26,26 @@ class MarkPresentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        emailLabel.text = email
         qrCodeLabel.text = qrCodeData
+        accessTimeLabel.text = getCurrentTime()
+        deviceInfoLabel.text = getDeviceInfo()
+    }
+    
+    func getCurrentTime() -> String {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            return dateFormatter.string(from: Date())
+    }
+    
+    func getDeviceInfo() -> String {
+            let device = UIDevice.current
+            let deviceName = device.name
+            let deviceModel = device.model
+            let systemName = device.systemName
+            let systemVersion = device.systemVersion
+            
+            return "Device Name: \(deviceName)\nDevice Model: \(deviceModel)\nSystem Name: \(systemName)\nSystem Version: \(systemVersion)"
     }
 
 
