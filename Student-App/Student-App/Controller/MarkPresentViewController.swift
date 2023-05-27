@@ -9,6 +9,11 @@ import Foundation
 import UIKit
 
 class MarkPresentViewController: UIViewController {
+    
+    var email: String?
+    var qrCodeData: String?
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
