@@ -140,7 +140,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iNs-b2-VJN" userLabel="Timer Label">
-                                        <rect key="frame" x="227.33333333333326" y="0.0" width="42.666666666666686" height="18"/>
+                                        <rect key="frame" x="227.33333333333331" y="0.0" width="42.666666666666686" height="18"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -148,13 +148,13 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bZT-0B-Mb3">
-                                <rect key="frame" x="166.66666666666663" y="794.33333333333337" width="96.666666666666657" height="35.666666666666629"/>
+                                <rect key="frame" x="166.66666666666666" y="794.33333333333337" width="96.666666666666657" height="35.666666666666629"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="QR Scan">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="18"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="aQ1-8L-geq" kind="show" destinationCreationSelector="goToQRScan" id="T9Q-O0-wEW"/>
+                                    <segue destination="aQ1-8L-geq" kind="show" identifier="goToQRScan" destinationCreationSelector="goToQRScan" id="T9Q-O0-wEW"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V4J-xV-dmH" userLabel="Email Label">
@@ -224,7 +224,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="markPresentButtonTapped:" destination="aQ1-8L-geq" eventType="touchUpInside" id="gpe-yb-H9A"/>
-                                    <segue destination="wQs-zg-aKl" kind="show" destinationCreationSelector="goToMarkPresent" id="YIT-De-vlO"/>
+                                    <segue destination="wQs-zg-aKl" kind="show" identifier="goToMarkPresent" destinationCreationSelector="goToMarkPresent" id="YIT-De-vlO"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Type Code" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Nt-oh-z9V">
