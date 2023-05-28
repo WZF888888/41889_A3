@@ -81,7 +81,7 @@ class QRScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
         // Proceed to the next view controller
         let markPresentVC = MarkPresentViewController()
         markPresentVC.qrCodeData = retrievedData
-        markPresentVC.userEmail = retrievedEmail
+        markPresentVC.userEmail = retrievedEmail!
         navigationController?.pushViewController(markPresentVC, animated: true)
     }
 }
