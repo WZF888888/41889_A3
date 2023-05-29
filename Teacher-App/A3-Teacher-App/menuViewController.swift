@@ -22,4 +22,7 @@ class menuViewController: UIViewController {
         menuVC.userEmail = userEmail
         self.present(menuVC, animated: true, completion: nil)
     }
+    @IBAction func handleQuitApp(_ sender: UIButton) {
+        exit(0)
+    }
 }

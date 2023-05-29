@@ -43,20 +43,26 @@ class checkAttendanceViewController: UIViewController {
                 // Get All Data
                 self.getAllData(collerctionName: finalAttendanceCode)
             } else {
-                print("Collection does not exist in Firebase Firestore.")
                 self.errorLabel.text = "No Attendance Code in Database"
+                self.errorLabel.textColor = UIColor.red
             }
         }
         
 
         if !attendanceData.isEmpty {
-            var finalattendanceData: [Attendance] = self.attendanceData
+            let finalattendanceData: [Attendance] = self.attendanceData
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let menuVC = storyboard.instantiateViewController(withIdentifier: "tableview") as! tableViewController
             menuVC.attendanceData = finalattendanceData
             self.present(menuVC, animated: true, completion: nil)
         }
 
+    }
+    
+    @IBAction func goBack(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let MenuVC = storyboard.instantiateViewController(withIdentifier: "teacherMenu")
+        self.present(MenuVC, animated: true, completion: nil)
     }
     
     func getAllData(collerctionName: String){

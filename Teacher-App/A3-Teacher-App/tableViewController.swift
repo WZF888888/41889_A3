@@ -25,6 +25,11 @@ class tableViewController: UIViewController, UITableViewDataSource {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell") // Register the cell identifier
     }
     
+    @IBAction func goBack(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let VC = storyboard.instantiateViewController(withIdentifier: "checkCode")
+        self.present(VC, animated: true, completion: nil)
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return attendanceData?.count ?? 0
     }
@@ -32,7 +37,7 @@ class tableViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let attendance = attendanceData![indexPath.row]
-        cell.textLabel?.text = "User Email: \(attendance.userEmail) \(attendance.event)\n at time: \(attendance.time)"
+        cell.textLabel?.text = "User Email: \(attendance.userEmail) \(attendance.event)\nat time: \(attendance.time)"
         //cell.detailTextLabel?.text = "Event: \(attendance.event)\nTime: \(attendance.time)"
         cell.textLabel?.numberOfLines = 3
         return cell

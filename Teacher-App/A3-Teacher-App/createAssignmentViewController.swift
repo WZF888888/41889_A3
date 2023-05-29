@@ -13,6 +13,7 @@ class createAssignmentViewController: UIViewController {
     var userEmail:String?
     var teachInputCode = ""
     var attendancCode = ""
+    
     @IBOutlet weak var attendanceCodeInputLabel: UITextField!
     @IBOutlet weak var createAssignmentButton: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
@@ -20,6 +21,7 @@ class createAssignmentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         createAssignmentButton.isEnabled = false
+
     }
     
     @IBAction func handleNoAttendanceCodeInput(_ sender: Any) {
@@ -48,6 +50,11 @@ class createAssignmentViewController: UIViewController {
         }
     }
     
+    @IBAction func goBack(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let MenuVC = storyboard.instantiateViewController(withIdentifier: "teacherMenu")
+        self.present(MenuVC, animated: true, completion: nil)
+    }
     
     func checkIfCollectionExists(collectionName: String, completion: @escaping (Bool) -> Void) {
         let db = Firestore.firestore()
