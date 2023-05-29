@@ -397,6 +397,9 @@
                                 <rect key="frame" x="98" y="449" width="197" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Search"/>
+                                <connections>
+                                    <action selector="searchButtonClick:" destination="1gr-Nf-qXo" eventType="touchUpInside" id="J2w-Hr-pru"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Attendance Code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NY9-Ru-66H">
                                 <rect key="frame" x="46" y="250" width="300" height="23"/>
@@ -435,6 +438,7 @@
                     <connections>
                         <outlet property="attendanceCodeTextField" destination="qKy-s0-LoM" id="OdP-Ih-RXF"/>
                         <outlet property="errorLabel" destination="Q2z-Vz-58r" id="91D-zt-Oib"/>
+                        <outlet property="searchButton" destination="vSK-K2-FMy" id="AKN-Ge-UWc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wyu-Bz-582" sceneMemberID="firstResponder"/>
@@ -444,7 +448,7 @@
         <!--Check Attendance-->
         <scene sceneID="Sj9-6L-s2g">
             <objects>
-                <viewController title="Check Attendance" modalPresentationStyle="fullScreen" id="G6l-oj-fjr" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tableview" title="Check Attendance" modalPresentationStyle="fullScreen" id="G6l-oj-fjr" customClass="tableViewController" customModule="A3_Teacher_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="wmE-vB-OlP" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -465,7 +469,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="2Fu-FB-5N8">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="tbView" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="2Fu-FB-5N8">
                                 <rect key="frame" x="16" y="116" width="361" height="702"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -475,6 +479,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="Iud-GH-Giy"/>
+                    <connections>
+                        <outlet property="tableView" destination="2Fu-FB-5N8" id="fc1-Yg-2RR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Men-2K-gCq" sceneMemberID="firstResponder"/>
             </objects>
