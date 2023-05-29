@@ -57,9 +57,6 @@ class loginViewController: UIViewController {
         }
     }
     
-    func passEmail(){
-        
-    }
     
     @IBAction func handleLoginClick(_ sender: Any) {
         let finalUsername:String = userEmailTextfield.text!
@@ -74,10 +71,8 @@ class loginViewController: UIViewController {
             } else {
                 // Login successful, Jump to the teacher app menu.
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let MenuVC = storyboard.instantiateViewController(withIdentifier: "TeacherMenu")
+                let MenuVC = storyboard.instantiateViewController(withIdentifier: "TeacherMenu")  as! createAssignmentViewController
                 self?.present(MenuVC, animated: true, completion: nil)
-                // Also Passing user email address to different controller
-                self!.passEmail()
             }
         }
     }
