@@ -14,6 +14,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var studentEmailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    var isKeyboardVisible = false // keyboard
+    
     @IBAction func loginButtonTapped(_ sender: Any) {
         guard let studentEmail = studentEmailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
@@ -55,8 +57,28 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        // show keyboard
+        isKeyboardVisible = true
+        
+        
         // set typed text color
         textField.textColor = UIColor.black
+        
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        isKeyboardVisible = false
+        return true
+    }
+
+    
+    @objc func handleTapGesture() {
+        if isKeyboardVisible {
+            view.endEditing(true)
+            isKeyboardVisible = false
+        }
     }
     
     override func viewDidLoad() {
@@ -69,6 +91,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         // secure password
         passwordTextField.isSecureTextEntry = true
         
+        
     }
     
+    
+    
 }
+
+
