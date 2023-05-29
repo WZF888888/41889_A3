@@ -29,6 +29,9 @@ class deleteAssignmentController: UIViewController {
                         print("Error deleting collection: \(error)")
                     } else {
                         print("Collection deleted successfully!")
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let MenuVC = storyboard.instantiateViewController(withIdentifier: "teacherMenu")
+                        self.present(MenuVC, animated: true, completion: nil)
                     }
                 }
             } else {
@@ -39,7 +42,7 @@ class deleteAssignmentController: UIViewController {
         
     }
     
-    
+    // handle no user input
     @IBAction func handleNoInput(_ sender: Any) {
         if codeInputTextField.text == ""{
             errorLabel.text = "Enter Code"
@@ -51,6 +54,7 @@ class deleteAssignmentController: UIViewController {
         }
     }
     
+    // Check is the Collection exist in the firebase database
     func checkIfCollectionExists(collectionName: String, completion: @escaping (Bool) -> Void) {
         let db = Firestore.firestore()
         let collectionRef = db.collection(collectionName)
@@ -72,6 +76,7 @@ class deleteAssignmentController: UIViewController {
         }
     }
     
+    // Delete the Collection Refrenceing from Google Firebase
     func deleteCollection(collectionName: String, completion: @escaping (Error?) -> Void) {
         let firestore = Firestore.firestore()
         let collectionRef = firestore.collection(collectionName)
@@ -81,8 +86,9 @@ class deleteAssignmentController: UIViewController {
                 return
             }
             
+            // Collection is already empty
             guard !snapshot.isEmpty else {
-                completion(nil) // Collection is already empty
+                completion(nil)
                 return
             }
             

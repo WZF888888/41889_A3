@@ -10,7 +10,7 @@ import Firebase
 import FirebaseFirestore
 
 class createAssignmentViewController: UIViewController {
-    var userEmail:String = ""
+    var userEmail:String?
     var teachInputCode = ""
     var attendancCode = ""
     @IBOutlet weak var attendanceCodeInputLabel: UITextField!
@@ -36,8 +36,38 @@ class createAssignmentViewController: UIViewController {
     @IBAction func handleCreateAssignmentButtonOnclick(_ sender: Any) {
         let createTimeFrame:String = currentTime()
         let event:String = "Create Assignment";
-        attendancCode = attendanceCodeInputLabel.text!;
-        writeToFirebase(email: self.userEmail,time: createTimeFrame,event: event)
+        let finalcode:String = attendanceCodeInputLabel.text!
+        checkIfCollectionExists(collectionName: finalcode){ exists in
+            if exists {
+                print("Collection exist in Firebase Firestore.")
+                self.errorLabel.text = "Attendance Code already in Database"
+            } else {
+                self.attendancCode = finalcode
+                self.writeToFirebase(email: self.userEmail!,time: createTimeFrame,event: event)
+            }
+        }
+    }
+    
+    
+    func checkIfCollectionExists(collectionName: String, completion: @escaping (Bool) -> Void) {
+        let db = Firestore.firestore()
+        let collectionRef = db.collection(collectionName)
+        
+        collectionRef.getDocuments { (snapshot, error) in
+            if let error = error {
+                print("Error retrieving documents: \(error)")
+                completion(false)
+                return
+            }
+            
+            if snapshot?.isEmpty == true {
+                // Collection does not exist
+                completion(false)
+            } else {
+                // Collection exists
+                completion(true)
+            }
+        }
     }
     
     func currentTime() -> String{
@@ -63,7 +93,7 @@ class createAssignmentViewController: UIViewController {
             } else {
                 print("Document added successfully")
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let MenuVC = storyboard.instantiateViewController(withIdentifier: "TeacherMenu")
+                let MenuVC = storyboard.instantiateViewController(withIdentifier: "teacherMenu")
                 self.present(MenuVC, animated: true, completion: nil)
             }
         }

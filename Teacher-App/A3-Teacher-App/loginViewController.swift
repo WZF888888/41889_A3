@@ -69,10 +69,11 @@ class loginViewController: UIViewController {
                 self!.systemErrorLabel.textColor = UIColor.red
                 print("Login error: \(error.localizedDescription)")
             } else {
-                // Login successful, Jump to the teacher app menu.
+                // Login successful, Jump to the teacher app menu and give the data.
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let MenuVC = storyboard.instantiateViewController(withIdentifier: "TeacherMenu")  as! createAssignmentViewController
-                self?.present(MenuVC, animated: true, completion: nil)
+                let menuVC = storyboard.instantiateViewController(withIdentifier: "teacherMenu") as! menuViewController
+                menuVC.userEmail = finalUsername
+                self!.present(menuVC, animated: true, completion: nil)
             }
         }
     }

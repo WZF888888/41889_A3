@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		38075DA72A24846100E154CF /* menuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38075DA62A24846100E154CF /* menuViewController.swift */; };
+		38075DA92A2498B800E154CF /* checkAttendanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38075DA82A2498B800E154CF /* checkAttendanceViewController.swift */; };
 		383C30E32A18DC760027A3E0 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383C30E22A18DC760027A3E0 /* loginViewController.swift */; };
 		38D3159D2A1BAF1C003FE31E /* createAssignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D3159C2A1BAF1C003FE31E /* createAssignmentViewController.swift */; };
 		38D3159F2A23B529003FE31E /* deleteAssignmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D3159E2A23B529003FE31E /* deleteAssignmentController.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		38075DA62A24846100E154CF /* menuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuViewController.swift; sourceTree = "<group>"; };
+		38075DA82A2498B800E154CF /* checkAttendanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkAttendanceViewController.swift; sourceTree = "<group>"; };
 		383C30E22A18DC760027A3E0 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
 		38D3159C2A1BAF1C003FE31E /* createAssignmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createAssignmentViewController.swift; sourceTree = "<group>"; };
 		38D3159E2A23B529003FE31E /* deleteAssignmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = deleteAssignmentController.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				38D3159C2A1BAF1C003FE31E /* createAssignmentViewController.swift */,
 				38D3159E2A23B529003FE31E /* deleteAssignmentController.swift */,
 				38075DA62A24846100E154CF /* menuViewController.swift */,
+				38075DA82A2498B800E154CF /* checkAttendanceViewController.swift */,
 			);
 			path = "A3-Teacher-App";
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 			files = (
 				383C30E32A18DC760027A3E0 /* loginViewController.swift in Sources */,
 				38F348E52A18CD080067C617 /* AppDelegate.swift in Sources */,
+				38075DA92A2498B800E154CF /* checkAttendanceViewController.swift in Sources */,
 				38D3159F2A23B529003FE31E /* deleteAssignmentController.swift in Sources */,
 				38D3159D2A1BAF1C003FE31E /* createAssignmentViewController.swift in Sources */,
 				38075DA72A24846100E154CF /* menuViewController.swift in Sources */,
