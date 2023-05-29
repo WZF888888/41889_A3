@@ -19,7 +19,6 @@ class QRScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupCamera()
         // Do any additional setup after loading the view.
     }
     
