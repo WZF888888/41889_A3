@@ -14,11 +14,10 @@ class QRScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
     var captureSession: AVCaptureSession!
     var videoPreviewLayer: AVCaptureVideoPreviewLayer!
     var retrievedEmail: String?
-
-    @IBOutlet weak var typeCodeLabel: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupCamera()
         // Do any additional setup after loading the view.
     }
     
@@ -67,26 +66,13 @@ class QRScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
             videoPreviewLayer.removeFromSuperlayer()
         }
     }
-
-    @IBAction func scanButtonTapped(_ sender: Any) {
-        setupCamera()
-    }
     
     @IBAction func markPresentButtonTapped(_ sender: Any) {
-        // Check if the textfield value matches the retrieved QR code data
-        let enteredText = typeCodeLabel.text
-        let retrievedData = qrCodeData
-        guard enteredText == qrCodeData else {
-            // Show an alert when the entered text doesn't match the retrieved QR code data
-            let alertController = UIAlertController(title: "Error Occurs", message: "The entered text does not match the QR code", preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            present(alertController, animated: true, completion: nil)
-            return
-        }
         // Proceed to the next view controller
-        let markPresentVC = MarkPresentViewController()
-        markPresentVC.qrCodeData = retrievedData
-        markPresentVC.userEmail = retrievedEmail!
-        navigationController?.pushViewController(markPresentVC, animated: true)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let MenuVC = storyboard.instantiateViewController(withIdentifier: "MarkPresentViewController") as! MarkPresentViewController
+        MenuVC.qrCodeData = qrCodeData!
+        MenuVC.userEmail = retrievedEmail!
+        self.present(MenuVC, animated: true, completion: nil)
     }
 }
