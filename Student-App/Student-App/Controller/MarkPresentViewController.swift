@@ -41,11 +41,8 @@ class MarkPresentViewController: UIViewController {
     func getDeviceInfo() -> String {
             let device = UIDevice.current
             let deviceName = device.name
-            let deviceModel = device.model
-            let systemName = device.systemName
-            let systemVersion = device.systemVersion
             
-            return "Device Name: \(deviceName)\nDevice Model: \(deviceModel)\nSystem Name: \(systemName)\nSystem Version: \(systemVersion)"
+            return "Device Name: \(deviceName)"
     }
 
 
