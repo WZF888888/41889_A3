@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 class MarkPresentViewController: UIViewController {
     
@@ -20,8 +21,6 @@ class MarkPresentViewController: UIViewController {
     
     var userEmail: String?
     var qrCodeData: String?
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +29,9 @@ class MarkPresentViewController: UIViewController {
         qrCodeLabel.text = qrCodeData
         accessTimeLabel.text = getCurrentTime()
         deviceInfoLabel.text = getDeviceInfo()
+        
+        let event: String = "Attended"
+        writeToFirebase(email: userEmail!, time: getCurrentTime(), event: event)
     }
     
     func getCurrentTime() -> String {
@@ -44,7 +46,17 @@ class MarkPresentViewController: UIViewController {
             
             return "Device Name: \(deviceName)"
     }
-
-
+    
+    func writeToFirebase(email: String,time: String,event: String) {
+                //if update ok jump back to
+                let db = Firestore.firestore()
+            let collection = db.collection(qrCodeData!)
+                let data: [String: Any] = [
+                    "userEmail": email,
+                    "time": time,
+                    "event": event
+                ]
+                collection.addDocument(data: data)
+            }
 }
 
