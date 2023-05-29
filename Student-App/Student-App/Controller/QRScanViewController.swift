@@ -57,8 +57,14 @@ class QRScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
            let qrCodeString = metadataObj.stringValue {
             qrCodeData = qrCodeString
             
+            // Display the QR code data
+            print("Scanned QR Code: \(qrCodeData ?? "")")
+            
             // Stop scanning
             captureSession.stopRunning()
+            
+            // Remove video preview layer
+            videoPreviewLayer.removeFromSuperlayer()
         }
     }
 
