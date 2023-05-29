@@ -21,10 +21,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         guard let password = passwordTextField.text else { return }
         
         Auth.auth().signIn(withEmail: studentEmail, password: password) { [weak self] (authResult, error) in
-            if let error = error {
+            if error != nil {
                 // Handle login error and display the error message in the login view
                 
-                let alert = UIAlertController(title: "Login Error", message: "Incorrect Email or Password.", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Login Error!", message: "Incorrect Email or Password.", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
                 }))
                 self?.present(alert, animated: true, completion: nil)
@@ -32,7 +32,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             } else {
                 // Login successful, jump to the student view
                 
-                let alert = UIAlertController(title: "Login Successful", message: "", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Login Successful!", message: "", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
                     if let studentVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "StudentViewController") as? StudentViewController {
                         studentVC.email = studentEmail

@@ -76,7 +76,7 @@ class MarkPresentViewController: UIViewController {
         remainingTimer?.invalidate()
         
         // Show session timeout alert
-        let alert = UIAlertController(title: "Attended", message: "Please log in again.", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Attended!", message: "Please log in again.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
             // Sign out the student and navigate back to the login screen
             if let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {

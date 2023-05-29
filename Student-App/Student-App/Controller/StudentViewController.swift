@@ -50,7 +50,7 @@ class StudentViewController: UIViewController {
     func logout() {
         sessionTimer?.invalidate()
         // Show session timeout alert
-        let alert = UIAlertController(title: "Session Timeout", message: "Your session has expired.", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Session Timeout!", message: "Your session has expired.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
             // Sign out the student and navigate back to the login screen
             if let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
