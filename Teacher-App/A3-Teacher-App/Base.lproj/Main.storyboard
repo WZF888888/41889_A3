@@ -215,6 +215,9 @@
                                 <rect key="frame" x="46" y="348" width="300" height="34.333333333333314"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Check Attendance"/>
+                                <connections>
+                                    <segue destination="1gr-Nf-qXo" kind="show" id="bDe-ur-4fT"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OdC-ZP-mhV">
                                 <rect key="frame" x="46" y="621" width="300" height="34.333333333333371"/>
@@ -390,9 +393,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kf0-2D-vkf">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kf0-2D-vkf">
                                 <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Check Attendance" id="HGJ-TK-LUi">
                                         <barButtonItem key="leftBarButtonItem" style="plain" id="3Tv-YJ-mQG">
@@ -406,25 +408,23 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qKy-s0-LoM">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qKy-s0-LoM">
                                 <rect key="frame" x="64" y="409" width="264" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vSK-K2-FMy">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vSK-K2-FMy">
                                 <rect key="frame" x="98" y="508" width="197" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Search"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter Attendance Code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NY9-Ru-66H">
-                                <rect key="frame" x="46" y="309" width="300" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Attendance Code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NY9-Ru-66H">
+                                <rect key="frame" x="46" y="309" width="300" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="SS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q2z-Vz-58r">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q2z-Vz-58r">
                                 <rect key="frame" x="106" y="594" width="180" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -434,9 +434,21 @@
                         <viewLayoutGuide key="safeArea" id="3yf-KL-4dO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Q2z-Vz-58r" firstAttribute="top" secondItem="vSK-K2-FMy" secondAttribute="bottom" constant="51" id="CT2-nY-9QJ"/>
-                            <constraint firstItem="3yf-KL-4dO" firstAttribute="trailing" secondItem="Q2z-Vz-58r" secondAttribute="trailing" constant="107" id="TwE-GS-3KR"/>
-                            <constraint firstItem="Q2z-Vz-58r" firstAttribute="leading" secondItem="3yf-KL-4dO" secondAttribute="leading" constant="106" id="pBj-6k-IWU"/>
+                            <constraint firstItem="NY9-Ru-66H" firstAttribute="top" secondItem="kf0-2D-vkf" secondAttribute="bottom" constant="206" id="0Cl-wz-bJk"/>
+                            <constraint firstItem="3yf-KL-4dO" firstAttribute="trailing" secondItem="qKy-s0-LoM" secondAttribute="trailing" constant="65" id="FO9-y2-z0Y"/>
+                            <constraint firstItem="vSK-K2-FMy" firstAttribute="leading" secondItem="3yf-KL-4dO" secondAttribute="leading" constant="98" id="Jeo-iv-m8p"/>
+                            <constraint firstItem="kf0-2D-vkf" firstAttribute="top" secondItem="3yf-KL-4dO" secondAttribute="top" id="NNa-Ki-GhX"/>
+                            <constraint firstItem="NY9-Ru-66H" firstAttribute="leading" secondItem="3yf-KL-4dO" secondAttribute="leading" constant="46" id="PTx-tf-yYX"/>
+                            <constraint firstItem="Q2z-Vz-58r" firstAttribute="top" secondItem="vSK-K2-FMy" secondAttribute="bottom" constant="51" id="R0J-Fb-B09"/>
+                            <constraint firstItem="kf0-2D-vkf" firstAttribute="leading" secondItem="3yf-KL-4dO" secondAttribute="leading" id="VrN-2d-i08"/>
+                            <constraint firstItem="3yf-KL-4dO" firstAttribute="trailing" secondItem="vSK-K2-FMy" secondAttribute="trailing" constant="98" id="WJ0-Pi-bDn"/>
+                            <constraint firstItem="qKy-s0-LoM" firstAttribute="leading" secondItem="3yf-KL-4dO" secondAttribute="leading" constant="64" id="mIw-vY-Zln"/>
+                            <constraint firstItem="3yf-KL-4dO" firstAttribute="trailing" secondItem="Q2z-Vz-58r" secondAttribute="trailing" constant="107" id="oC9-ZT-KdG"/>
+                            <constraint firstItem="vSK-K2-FMy" firstAttribute="top" secondItem="qKy-s0-LoM" secondAttribute="bottom" constant="65" id="onh-DV-jkA"/>
+                            <constraint firstItem="qKy-s0-LoM" firstAttribute="top" secondItem="NY9-Ru-66H" secondAttribute="bottom" constant="77" id="pe8-uf-Cmk"/>
+                            <constraint firstItem="Q2z-Vz-58r" firstAttribute="leading" secondItem="3yf-KL-4dO" secondAttribute="leading" constant="106" id="wX8-Ci-0eJ"/>
+                            <constraint firstItem="3yf-KL-4dO" firstAttribute="trailing" secondItem="NY9-Ru-66H" secondAttribute="trailing" constant="47" id="xmb-6y-0x8"/>
+                            <constraint firstItem="kf0-2D-vkf" firstAttribute="trailing" secondItem="3yf-KL-4dO" secondAttribute="trailing" id="zdc-Kk-aNb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nWS-c7-b2a"/>
@@ -492,9 +504,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d1V-3a-AYK">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d1V-3a-AYK">
                                 <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Delete Attendance" id="rS5-Un-FW9">
                                         <barButtonItem key="leftBarButtonItem" style="plain" id="LGI-wd-Fo8">
@@ -508,9 +519,8 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y5s-sm-Y85">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y5s-sm-Y85">
                                 <rect key="frame" x="64" y="409" width="264" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -518,23 +528,25 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o7U-6f-uJE">
-                                <rect key="frame" x="98" y="508" width="197" height="35"/>
+                                <rect key="frame" x="98" y="546" width="197" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Delete"/>
                                 <connections>
                                     <action selector="handleDelete:" destination="piu-8v-qh0" eventType="touchUpInside" id="uil-mI-jAf"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cc9-Rx-l4Q">
-                                <rect key="frame" x="106" y="594" width="180" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Attendance Code that you want to delete" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ot-c2-Rva">
+                                <rect key="frame" x="48" y="308" width="296" height="45.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter Attendance Code that you want to delete" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ot-c2-Rva">
-                                <rect key="frame" x="48" y="308" width="296" height="77"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" wer" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cc9-Rx-l4Q">
+                                <rect key="frame" x="106" y="617" width="180" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="lpU-IG-90m"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -542,12 +554,21 @@
                         <viewLayoutGuide key="safeArea" id="ksa-oV-qWZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="o7U-6f-uJE" firstAttribute="leading" secondItem="ksa-oV-qWZ" secondAttribute="leading" constant="98" id="B0U-dh-cj0"/>
-                            <constraint firstItem="Cc9-Rx-l4Q" firstAttribute="top" secondItem="o7U-6f-uJE" secondAttribute="bottom" constant="51" id="Mg2-yl-gdX"/>
-                            <constraint firstItem="ksa-oV-qWZ" firstAttribute="trailing" secondItem="Cc9-Rx-l4Q" secondAttribute="trailing" constant="107" id="gZr-tM-enu"/>
-                            <constraint firstItem="Cc9-Rx-l4Q" firstAttribute="leading" secondItem="ksa-oV-qWZ" secondAttribute="leading" constant="106" id="ldS-DA-gS3"/>
-                            <constraint firstItem="ksa-oV-qWZ" firstAttribute="bottom" secondItem="Cc9-Rx-l4Q" secondAttribute="bottom" constant="203" id="nzu-Xf-JL1"/>
-                            <constraint firstItem="ksa-oV-qWZ" firstAttribute="trailing" secondItem="o7U-6f-uJE" secondAttribute="trailing" constant="98" id="phK-rL-rZC"/>
+                            <constraint firstItem="d1V-3a-AYK" firstAttribute="trailing" secondItem="ksa-oV-qWZ" secondAttribute="trailing" id="5FD-xD-bhS"/>
+                            <constraint firstItem="ksa-oV-qWZ" firstAttribute="trailing" secondItem="Cc9-Rx-l4Q" secondAttribute="trailing" constant="107" id="Dy0-kU-NeW"/>
+                            <constraint firstItem="o7U-6f-uJE" firstAttribute="top" secondItem="y5s-sm-Y85" secondAttribute="bottom" constant="103" id="E8n-ZS-wXI"/>
+                            <constraint firstItem="Cc9-Rx-l4Q" firstAttribute="leading" secondItem="ksa-oV-qWZ" secondAttribute="leading" constant="106" id="JTA-gw-cir"/>
+                            <constraint firstItem="9Ot-c2-Rva" firstAttribute="leading" secondItem="ksa-oV-qWZ" secondAttribute="leading" constant="48" id="QoV-3D-FE5"/>
+                            <constraint firstItem="9Ot-c2-Rva" firstAttribute="top" secondItem="d1V-3a-AYK" secondAttribute="bottom" constant="205" id="T0z-G4-ceH"/>
+                            <constraint firstItem="d1V-3a-AYK" firstAttribute="top" secondItem="ksa-oV-qWZ" secondAttribute="top" id="TUn-B0-xdA"/>
+                            <constraint firstItem="o7U-6f-uJE" firstAttribute="leading" secondItem="ksa-oV-qWZ" secondAttribute="leading" constant="98" id="Ugc-wS-xY9"/>
+                            <constraint firstItem="Cc9-Rx-l4Q" firstAttribute="top" secondItem="o7U-6f-uJE" secondAttribute="bottom" constant="36" id="Wja-gm-TQp"/>
+                            <constraint firstItem="y5s-sm-Y85" firstAttribute="top" secondItem="9Ot-c2-Rva" secondAttribute="bottom" constant="55.329999999999998" id="f6M-gH-nu9"/>
+                            <constraint firstItem="d1V-3a-AYK" firstAttribute="leading" secondItem="ksa-oV-qWZ" secondAttribute="leading" id="fZz-Ke-cxJ"/>
+                            <constraint firstItem="y5s-sm-Y85" firstAttribute="leading" secondItem="ksa-oV-qWZ" secondAttribute="leading" constant="64" id="hJP-NK-y5h"/>
+                            <constraint firstItem="ksa-oV-qWZ" firstAttribute="trailing" secondItem="o7U-6f-uJE" secondAttribute="trailing" constant="98" id="ihe-9k-ZD0"/>
+                            <constraint firstItem="ksa-oV-qWZ" firstAttribute="trailing" secondItem="9Ot-c2-Rva" secondAttribute="trailing" constant="49" id="mK5-PC-bh5"/>
+                            <constraint firstItem="ksa-oV-qWZ" firstAttribute="trailing" secondItem="y5s-sm-Y85" secondAttribute="trailing" constant="65" id="v9U-me-h4F"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1gU-sg-5mw"/>

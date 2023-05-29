@@ -34,8 +34,8 @@ class createAssignmentViewController: UIViewController {
     }
     
     @IBAction func handleCreateAssignmentButtonOnclick(_ sender: Any) {
-        var createTimeFrame:String = currentTime()
-        var event:String = "Create Assignment";
+        let createTimeFrame:String = currentTime()
+        let event:String = "Create Assignment";
         attendancCode = attendanceCodeInputLabel.text!;
         writeToFirebase(email: self.userEmail,time: createTimeFrame,event: event)
     }

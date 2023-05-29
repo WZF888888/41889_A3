@@ -22,14 +22,23 @@ class deleteAssignmentController: UIViewController {
     
     @IBAction func handleDelete(_ sender: Any) {
         let finalDelete = codeInputTextField.text!
-        deleteCollection(collectionName: finalDelete) { error in
-            if let error = error {
-                print("Error deleting collection: \(error)")
+        checkIfCollectionExists(collectionName: finalDelete){ exists in
+            if exists {
+                self.deleteCollection(collectionName: finalDelete) { error in
+                    if let error = error {
+                        print("Error deleting collection: \(error)")
+                    } else {
+                        print("Collection deleted successfully!")
+                    }
+                }
             } else {
-                print("Collection deleted successfully!")
+                print("Collection does not exist in Firebase Firestore.")
+                self.errorLabel.text = "No Attendance Code in Database"
             }
         }
+        
     }
+    
     
     @IBAction func handleNoInput(_ sender: Any) {
         if codeInputTextField.text == ""{
@@ -42,14 +51,30 @@ class deleteAssignmentController: UIViewController {
         }
     }
     
-    
-    
-    
+    func checkIfCollectionExists(collectionName: String, completion: @escaping (Bool) -> Void) {
+        let db = Firestore.firestore()
+        let collectionRef = db.collection(collectionName)
+        
+        collectionRef.getDocuments { (snapshot, error) in
+            if let error = error {
+                print("Error retrieving documents: \(error)")
+                completion(false)
+                return
+            }
+            
+            if snapshot?.isEmpty == true {
+                // Collection does not exist
+                completion(false)
+            } else {
+                // Collection exists
+                completion(true)
+            }
+        }
+    }
     
     func deleteCollection(collectionName: String, completion: @escaping (Error?) -> Void) {
         let firestore = Firestore.firestore()
         let collectionRef = firestore.collection(collectionName)
-        
         collectionRef.getDocuments { snapshot, error in
             guard let snapshot = snapshot else {
                 completion(error)
@@ -76,7 +101,4 @@ class deleteAssignmentController: UIViewController {
             }
         }
     }
-
-
-
 }
