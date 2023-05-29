@@ -16,7 +16,7 @@ class StudentViewController: UIViewController {
 
     var email: String?
     var sessionTimer: Timer?
-    var remainingTime: TimeInterval = 30 // Set the desired session timeout duration in seconds
+    var remainingTime: TimeInterval = 60 * 15 // Set the desired session timeout duration in seconds
 
     override func viewDidLoad() {
         super.viewDidLoad()
