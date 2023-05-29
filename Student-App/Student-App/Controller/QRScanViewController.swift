@@ -64,15 +64,17 @@ class QRScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
             
             // Remove video preview layer
             videoPreviewLayer.removeFromSuperlayer()
+            
+            // Navigate to MarkPresentViewController
+            let alert = UIAlertController(title: "Scan Successful", message: "", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+                if let markVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MarkPresentViewController") as? MarkPresentViewController {
+                    markVC.qrCodeData = self.qrCodeData!
+                    markVC.userEmail = self.retrievedEmail!
+                    self.navigationController?.setViewControllers([markVC], animated: true)
+                }
+            }))
+            self.present(alert, animated: true, completion: nil)
         }
-    }
-    
-    @IBAction func markPresentButtonTapped(_ sender: Any) {
-        // Proceed to the next view controller
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let MenuVC = storyboard.instantiateViewController(withIdentifier: "MarkPresentViewController") as! MarkPresentViewController
-        MenuVC.qrCodeData = qrCodeData!
-        MenuVC.userEmail = retrievedEmail!
-        self.present(MenuVC, animated: true, completion: nil)
     }
 }
