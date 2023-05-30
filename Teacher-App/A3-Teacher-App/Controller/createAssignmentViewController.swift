@@ -8,6 +8,9 @@
 import UIKit
 import Firebase
 import FirebaseFirestore
+// In this page we have to use third party database system - Firebase
+// In order to learn this the some code is taken from https://firebase.google.com/docs/ios/setup and we had modify to make it work in our project
+
 
 class createAssignmentViewController: UIViewController,UITextFieldDelegate {
     
@@ -31,6 +34,7 @@ class createAssignmentViewController: UIViewController,UITextFieldDelegate {
 
     }
     
+    //Handle User Not input any attendance code
     @IBAction func handleNoAttendanceCodeInput(_ sender: Any) {
         if attendanceCodeInputLabel.text == "" {
             errorLabel.text = "Enter Code"
@@ -42,10 +46,12 @@ class createAssignmentViewController: UIViewController,UITextFieldDelegate {
         }
     }
     
+    //Handle User click create assignment button
     @IBAction func handleCreateAssignmentButtonOnclick(_ sender: Any) {
         let createTimeFrame:String = currentTime()
         let event:String = "Create Assignment";
         let finalcode:String = attendanceCodeInputLabel.text!
+        // Check if the entered attendance code already exsit in the database
         checkIfCollectionExists(collectionName: finalcode){ exists in
             if exists {
                 print("Collection exist in Firebase Firestore.")
@@ -57,12 +63,14 @@ class createAssignmentViewController: UIViewController,UITextFieldDelegate {
         }
     }
     
+    // Function for user hit back button in the nav bar
     @IBAction func goBack(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let MenuVC = storyboard.instantiateViewController(withIdentifier: "teacherMenu")
         self.present(MenuVC, animated: true, completion: nil)
     }
     
+    // Helper funcition that find out is the collection was already in the database
     func checkIfCollectionExists(collectionName: String, completion: @escaping (Bool) -> Void) {
         let db = Firestore.firestore()
         let collectionRef = db.collection(collectionName)
@@ -84,11 +92,13 @@ class createAssignmentViewController: UIViewController,UITextFieldDelegate {
         }
     }
     
+    // Function that enable when user hit return on the keyboard and then the keyboard will be gone
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         attendanceCodeInputLabel.resignFirstResponder() // Dismiss the keyboard
         return true
     }
     
+    // Fucntion that get current system time
     func currentTime() -> String{
         let tempTimeWithoutRefector = Date()
         let dateFormatter = DateFormatter()
@@ -97,6 +107,7 @@ class createAssignmentViewController: UIViewController,UITextFieldDelegate {
         return finalReturnDateString
     }
     
+    // Function that write data to the firebase database
     func writeToFirebase(email: String,time: String,event: String) {
         //if update ok jump back to
         let db = Firestore.firestore()

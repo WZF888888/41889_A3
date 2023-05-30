@@ -2,7 +2,7 @@
 //  deleteAssignmentController.swift
 //  A3-Teacher-App
 //
-//  Created by John Wang on 2023/5/29.
+//  Created by John Wang on 2023/5/23.
 //
 
 import UIKit
@@ -30,6 +30,8 @@ class deleteAssignmentController: UIViewController,UITextFieldDelegate {
     //handle Delete function
     @IBAction func handleDelete(_ sender: Any) {
         let finalDelete = codeInputTextField.text!
+        // Before delete chick the target deleted code was in the database. if it was in the database then call the deleteCollection function to delete it.
+        // Else if not print error message to the label.
         checkIfCollectionExists(collectionName: finalDelete){ exists in
             if exists {
                 self.deleteCollection(collectionName: finalDelete) { error in
@@ -55,9 +57,11 @@ class deleteAssignmentController: UIViewController,UITextFieldDelegate {
         self.present(MenuVC, animated: true, completion: nil)
     }
     
+    // Function that handle user click the back button in the nav bar
     @IBAction func handleNavBackClick(_ sender: Any) {
         navControl()
     }
+    
     // handle no user input
     @IBAction func handleNoInput(_ sender: Any) {
         if codeInputTextField.text == ""{
@@ -86,12 +90,14 @@ class deleteAssignmentController: UIViewController,UITextFieldDelegate {
         }
     }
     
+    // Function that enable when user hit return on the keyboard and then the keyboard will be gone
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         codeInputTextField.resignFirstResponder() // Dismiss the keyboard
         return true
     }
     
     // Delete the Collection Refrenceing from Google Firebase
+    // Base on example in firebase learning center and modify based on the need
     func deleteCollection(collectionName: String, completion: @escaping (Error?) -> Void) {
         let firestore = Firestore.firestore()
         let collectionRef = firestore.collection(collectionName)

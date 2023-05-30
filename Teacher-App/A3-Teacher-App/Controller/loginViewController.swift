@@ -33,6 +33,7 @@ class loginViewController: UIViewController,UITextFieldDelegate {
         passwordInputTextField.isSecureTextEntry = true
     }
     
+    // Function that user had no email input in the text field, this will disable the button and give a error message.
     @IBAction func handleEmailNoInput(_ sender: Any) {
         if userEmailTextfield.text == "" {
             errorLabel1.text = "Please Enter the email"
@@ -45,6 +46,7 @@ class loginViewController: UIViewController,UITextFieldDelegate {
         controlButton(inputTureForUsername: inputTureForUsername, inputTureForPassword: inputTureForPassword)
     }
     
+    // Function that user had no password input in the text field, this will disable the button and give a error message.
     @IBAction func handlePasswordNoInput(_ sender: Any) {
         if passwordInputTextField.text == "" {
             errorLabel2.text = "Please Enter the password"
@@ -57,6 +59,7 @@ class loginViewController: UIViewController,UITextFieldDelegate {
         controlButton(inputTureForUsername: inputTureForUsername, inputTureForPassword: inputTureForPassword)
     }
     
+    // This is a helper function that enable or disable the button if need under some condition.
     func controlButton(inputTureForUsername:Bool, inputTureForPassword: Bool) {
         if inputTureForUsername == true && inputTureForPassword == true {
             loginButton.isEnabled = true
@@ -65,12 +68,14 @@ class loginViewController: UIViewController,UITextFieldDelegate {
         }
     }
     
+    // Function that enable when user hit return on the keyboard and then the keyboard will be gone
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         userEmailTextfield.resignFirstResponder() // Dismiss the keyboard
         passwordInputTextField.resignFirstResponder()
         return true
     }
     
+    // This function handle the user click the login button. If login is okay it will jump to menu page and also passing data to the menu page.
     @IBAction func handleLoginClick(_ sender: Any) {
         let finalUsername:String = userEmailTextfield.text!
         let finalPassword:String = passwordInputTextField.text!
