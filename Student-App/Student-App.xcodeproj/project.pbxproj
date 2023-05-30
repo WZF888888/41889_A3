@@ -48,13 +48,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8506927B2A1C7EB900CACAE8 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		85AC84E92A1C6C5400F0FAB3 = {
 			isa = PBXGroup;
 			children = (
@@ -75,7 +68,6 @@
 			isa = PBXGroup;
 			children = (
 				850692792A1C7EAA00CACAE8 /* GoogleService-Info.plist */,
-				8506927B2A1C7EB900CACAE8 /* Model */,
 				85AC850D2A1C6D3800F0FAB3 /* View */,
 				85AC850E2A1C6D3F00F0FAB3 /* Controller */,
 				85AC84F52A1C6C5400F0FAB3 /* AppDelegate.swift */,
