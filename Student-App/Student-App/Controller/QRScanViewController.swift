@@ -7,6 +7,7 @@
 
 import AVFoundation
 import UIKit
+import Firebase
 
 class QRScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
@@ -64,15 +65,52 @@ class QRScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
             
             // Remove video preview layer
             videoPreviewLayer.removeFromSuperlayer()
+            
+            // Navigate to MarkPresentViewController
+            checkIfCollectionExists(collectionName: qrCodeData!){ exists in
+                if exists {
+                    let alert = UIAlertController(title: "Scan Successful!", message: "", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+                        if let markVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MarkPresentViewController") as? MarkPresentViewController {
+                            markVC.qrCodeData = self.qrCodeData!
+                            markVC.userEmail = self.retrievedEmail!
+                            self.navigationController?.setViewControllers([markVC], animated: true)
+                        }
+                    }))
+                    self.present(alert, animated: true, completion: nil)
+                } else {
+                    let alert = UIAlertController(title: "QR Code does not exist!", message: "Plese log in again.", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+                        // Sign out the student and navigate back to the login screen
+                        if let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
+                            self.navigationController?.setViewControllers([loginVC], animated: true)
+                        }
+                    }))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+            
         }
     }
     
-    @IBAction func markPresentButtonTapped(_ sender: Any) {
-        // Proceed to the next view controller
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let MenuVC = storyboard.instantiateViewController(withIdentifier: "MarkPresentViewController") as! MarkPresentViewController
-        MenuVC.qrCodeData = qrCodeData!
-        MenuVC.userEmail = retrievedEmail!
-        self.present(MenuVC, animated: true, completion: nil)
+    func checkIfCollectionExists(collectionName: String, completion: @escaping (Bool) -> Void) {
+        let db = Firestore.firestore()
+        let collectionRef = db.collection(collectionName)
+
+        collectionRef.getDocuments { (snapshot, error) in
+            if error != nil {
+                print("Error retrieving documents: (error)")
+                completion(false)
+                return
+            }
+
+            if snapshot?.isEmpty == true {
+                // Collection does not exist
+                completion(false)
+            } else {
+                // Collection exists
+                completion(true)
+            }
+        }
     }
 }
