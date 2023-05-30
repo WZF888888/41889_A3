@@ -7,7 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38075DA72A24846100E154CF /* menuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38075DA62A24846100E154CF /* menuViewController.swift */; };
+		38075DA92A2498B800E154CF /* checkAttendanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38075DA82A2498B800E154CF /* checkAttendanceViewController.swift */; };
+		38075DAB2A24EC2800E154CF /* tableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38075DAA2A24EC2800E154CF /* tableViewController.swift */; };
+		38075DAD2A25096400E154CF /* forgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38075DAC2A25096400E154CF /* forgetPasswordViewController.swift */; };
 		383C30E32A18DC760027A3E0 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383C30E22A18DC760027A3E0 /* loginViewController.swift */; };
+		38D3159D2A1BAF1C003FE31E /* createAssignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D3159C2A1BAF1C003FE31E /* createAssignmentViewController.swift */; };
+		38D3159F2A23B529003FE31E /* deleteAssignmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D3159E2A23B529003FE31E /* deleteAssignmentController.swift */; };
 		38EF8DF22A19C1DB005382FD /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 38EF8DF12A19C1DB005382FD /* FirebaseAuth */; };
 		38EF8DF42A19C1DB005382FD /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 38EF8DF32A19C1DB005382FD /* FirebaseFirestore */; };
 		38EF8DF62A19C248005382FD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38EF8DF52A19C247005382FD /* GoogleService-Info.plist */; };
@@ -18,7 +24,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		38075DA62A24846100E154CF /* menuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuViewController.swift; sourceTree = "<group>"; };
+		38075DA82A2498B800E154CF /* checkAttendanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkAttendanceViewController.swift; sourceTree = "<group>"; };
+		38075DAA2A24EC2800E154CF /* tableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableViewController.swift; sourceTree = "<group>"; };
+		38075DAC2A25096400E154CF /* forgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = forgetPasswordViewController.swift; sourceTree = "<group>"; };
 		383C30E22A18DC760027A3E0 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
+		38D3159C2A1BAF1C003FE31E /* createAssignmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createAssignmentViewController.swift; sourceTree = "<group>"; };
+		38D3159E2A23B529003FE31E /* deleteAssignmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = deleteAssignmentController.swift; sourceTree = "<group>"; };
 		38EF8DF52A19C247005382FD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		38F348E12A18CD080067C617 /* A3-Teacher-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "A3-Teacher-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		38F348E42A18CD080067C617 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +52,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		38075DAE2A25B0E600E154CF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				38D3159C2A1BAF1C003FE31E /* createAssignmentViewController.swift */,
+				383C30E22A18DC760027A3E0 /* loginViewController.swift */,
+				38D3159E2A23B529003FE31E /* deleteAssignmentController.swift */,
+				38075DA62A24846100E154CF /* menuViewController.swift */,
+				38075DA82A2498B800E154CF /* checkAttendanceViewController.swift */,
+				38075DAA2A24EC2800E154CF /* tableViewController.swift */,
+				38075DAC2A25096400E154CF /* forgetPasswordViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		38075DAF2A25B15F00E154CF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				38F348EE2A18CD090067C617 /* Main.storyboard */,
+				38F348F32A18CD0A0067C617 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		38F348D82A18CD080067C617 = {
 			isa = PBXGroup;
 			children = (
@@ -59,12 +94,11 @@
 		38F348E32A18CD080067C617 /* A3-Teacher-App */ = {
 			isa = PBXGroup;
 			children = (
+				38075DAF2A25B15F00E154CF /* View */,
+				38075DAE2A25B0E600E154CF /* Controller */,
 				38EF8DF52A19C247005382FD /* GoogleService-Info.plist */,
-				383C30E22A18DC760027A3E0 /* loginViewController.swift */,
 				38F348E42A18CD080067C617 /* AppDelegate.swift */,
-				38F348EE2A18CD090067C617 /* Main.storyboard */,
 				38F348F12A18CD0A0067C617 /* Assets.xcassets */,
-				38F348F32A18CD0A0067C617 /* LaunchScreen.storyboard */,
 			);
 			path = "A3-Teacher-App";
 			sourceTree = "<group>";
@@ -149,7 +183,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				383C30E32A18DC760027A3E0 /* loginViewController.swift in Sources */,
+				38075DAB2A24EC2800E154CF /* tableViewController.swift in Sources */,
 				38F348E52A18CD080067C617 /* AppDelegate.swift in Sources */,
+				38075DA92A2498B800E154CF /* checkAttendanceViewController.swift in Sources */,
+				38D3159F2A23B529003FE31E /* deleteAssignmentController.swift in Sources */,
+				38D3159D2A1BAF1C003FE31E /* createAssignmentViewController.swift in Sources */,
+				38075DAD2A25096400E154CF /* forgetPasswordViewController.swift in Sources */,
+				38075DA72A24846100E154CF /* menuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +336,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3CQ8GAMBK7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -323,6 +364,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3CQ8GAMBK7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
