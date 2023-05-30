@@ -73,9 +73,8 @@ class createAssignmentViewController: UIViewController,UITextFieldDelegate {
     // Helper funcition that find out is the collection was already in the database
     func checkIfCollectionExists(collectionName: String, completion: @escaping (Bool) -> Void) {
         let db = Firestore.firestore()
-        let collectionRef = db.collection(collectionName)
-        
-        collectionRef.getDocuments { (snapshot, error) in
+        let collection = db.collection(collectionName)
+        collection.getDocuments { (snapshot, error) in
             if let error = error {
                 print("Error retrieving documents: \(error)")
                 completion(false)

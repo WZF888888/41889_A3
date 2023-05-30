@@ -2,7 +2,7 @@
 //  checkAttendanceViewController.swift
 //  A3-Teacher-App
 //
-//  Created by John Wang on 2023/5/29.
+//  Created by John Wang on 2023/5/24.
 //
 
 import UIKit
@@ -29,6 +29,7 @@ class checkAttendanceViewController: UIViewController,UITextFieldDelegate {
         searchButton.isEnabled = false
     }
     
+    //Handle User Not input any attendance code
     @IBAction func handleNoInput(_ sender: Any) {
         if attendanceCodeTextField.text == ""{
             errorLabel.text = "Please enter attendance code!"
@@ -40,6 +41,7 @@ class checkAttendanceViewController: UIViewController,UITextFieldDelegate {
         }
     }
     
+    // Handle user click search button
     @IBAction func searchButtonClick(_ sender: Any) {
         let finalAttendanceCode = attendanceCodeTextField.text!
         checkIfCollectionExists(collectionName: finalAttendanceCode){ exists in
@@ -51,7 +53,7 @@ class checkAttendanceViewController: UIViewController,UITextFieldDelegate {
                 self.errorLabel.textColor = UIColor.red
             }
         }
-        
+        // If there are data in the array then jump to the table view and display the dataset in table
         if !attendanceData.isEmpty {
             let finalattendanceData: [Attendance] = self.attendanceData
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -62,11 +64,13 @@ class checkAttendanceViewController: UIViewController,UITextFieldDelegate {
         }
     }
     
+    // Function that enable when user hit return on the keyboard and then the keyboard will be gone
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         attendanceCodeTextField.resignFirstResponder() // Dismiss the keyboard
         return true
     }
     
+    // Function handle button click in nav that go back to the menu page.
     @IBAction func goBack(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let MenuVC = storyboard.instantiateViewController(withIdentifier: "teacherMenu") as! menuViewController
@@ -74,6 +78,7 @@ class checkAttendanceViewController: UIViewController,UITextFieldDelegate {
         self.present(MenuVC, animated: true, completion: nil)
     }
     
+    // helper function that get all dataset in a target firebase collection
     func getAllData(collerctionName: String){
         let db = Firestore.firestore()
         let collection = db.collection(collerctionName)
@@ -90,7 +95,6 @@ class checkAttendanceViewController: UIViewController,UITextFieldDelegate {
 
             for document in documents {
                 let data = document.data()
-                
                 if let userEmail = data["userEmail"] as? String,
                    let event = data["event"] as? String,
                    let time = data["time"] as? String {
@@ -98,15 +102,14 @@ class checkAttendanceViewController: UIViewController,UITextFieldDelegate {
                     self.attendanceData.append(attendance)
                 }
             }
-
         }
     }
     
+    // Helper funcition that find out is the collection was already in the database
     func checkIfCollectionExists(collectionName: String, completion: @escaping (Bool) -> Void) {
         let db = Firestore.firestore()
-        let collectionRef = db.collection(collectionName)
-        
-        collectionRef.getDocuments { (snapshot, error) in
+        let collection = db.collection(collectionName)
+        collection.getDocuments { (snapshot, error) in
             if let error = error {
                 print("Error retrieving documents: \(error)")
                 completion(false)

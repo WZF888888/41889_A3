@@ -20,6 +20,7 @@ class forgetPasswordViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    // Function that handle clicked button I understand button
     @IBAction func handleButtonClickBack(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let menuVC = storyboard.instantiateViewController(withIdentifier: "loginMain")
