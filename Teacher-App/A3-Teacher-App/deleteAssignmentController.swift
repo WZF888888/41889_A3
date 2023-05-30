@@ -68,14 +68,9 @@ class deleteAssignmentController: UIViewController,UITextFieldDelegate {
     // Check is the Collection exist in the firebase database
     func checkIfCollectionExists(collectionName: String, completion: @escaping (Bool) -> Void) {
         let db = Firestore.firestore()
-        let collectionRef = db.collection(collectionName)
-        
-        collectionRef.getDocuments { (snapshot, error) in
-            if let error = error {
-                completion(false)
-                return
-            }
-            
+        let collection = db.collection(collectionName)
+        collection.getDocuments {
+            (snapshot, error) in
             if snapshot?.isEmpty == true {
                 // Collection does not exist
                 completion(false)
