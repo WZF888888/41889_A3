@@ -27,6 +27,7 @@ class deleteAssignmentController: UIViewController,UITextFieldDelegate {
         deleteButton.isEnabled = false
     }
     
+    //handle Delete function
     @IBAction func handleDelete(_ sender: Any) {
         let finalDelete = codeInputTextField.text!
         checkIfCollectionExists(collectionName: finalDelete){ exists in
@@ -40,11 +41,13 @@ class deleteAssignmentController: UIViewController,UITextFieldDelegate {
                 }
             } else {
                 self.errorLabel.text = "No Attendance Code in Database"
+                self.errorLabel.textColor = UIColor.red
             }
         }
         
     }
     
+    // Function control the jumping to next page or get back to menu
     func navControl(){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let MenuVC = storyboard.instantiateViewController(withIdentifier: "teacherMenu") as! menuViewController

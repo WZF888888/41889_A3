@@ -322,9 +322,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PEg-Cw-D7J">
-                                <rect key="frame" x="33" y="700.66666666666663" width="326" height="81.333333333333371"/>
-                                <string key="text">Please Note that once you have sucessful starting a new attendence the create new attendance fucntion will be locked one you login again.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="33" y="710.33333333333337" width="326" height="71.666666666666629"/>
+                                <string key="text">Please note that once you successfully start a new attendance, the "Create New Attendance" function will be locked. If you wish to use it again, you will need to log in once more.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
