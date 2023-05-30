@@ -8,6 +8,12 @@
 import UIKit
 
 class forgetPasswordViewController: UIViewController {
+    
+    //Disable landscape mode
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+    
     var userEmail:String?
     
     override func viewDidLoad() {

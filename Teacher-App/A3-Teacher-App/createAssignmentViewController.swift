@@ -9,7 +9,13 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 
-class createAssignmentViewController: UIViewController {
+class createAssignmentViewController: UIViewController,UITextFieldDelegate {
+    
+    //Disable landscape mode
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+    
     var userEmail:String?
     var teachInputCode = ""
     var attendancCode = ""
@@ -20,6 +26,7 @@ class createAssignmentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        attendanceCodeInputLabel.delegate = self
         createAssignmentButton.isEnabled = false
 
     }
@@ -75,6 +82,11 @@ class createAssignmentViewController: UIViewController {
                 completion(true)
             }
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        attendanceCodeInputLabel.resignFirstResponder() // Dismiss the keyboard
+        return true
     }
     
     func currentTime() -> String{

@@ -10,6 +10,11 @@ import UIKit
 class menuViewController: UIViewController {
     var userEmail:String?
     
+    //Disable landscape mode
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+    
     @IBOutlet weak var createButton: UIButton!
     
     override func viewDidLoad() {

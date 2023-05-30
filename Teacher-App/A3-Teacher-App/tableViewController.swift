@@ -15,6 +15,11 @@ struct Attendance {
 
 class tableViewController: UIViewController, UITableViewDataSource {
     
+    //Disable landscape mode
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+    
     var attendanceData: [Attendance]?
     
     @IBOutlet weak var tableView: UITableView!

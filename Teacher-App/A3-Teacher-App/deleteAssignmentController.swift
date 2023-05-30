@@ -9,7 +9,12 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 
-class deleteAssignmentController: UIViewController {
+class deleteAssignmentController: UIViewController,UITextFieldDelegate {
+    
+    //Disable landscape mode
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
     
     @IBOutlet weak var codeInputTextField: UITextField!
     @IBOutlet weak var deleteButton: UIButton!
@@ -17,6 +22,7 @@ class deleteAssignmentController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        codeInputTextField.delegate = self
         deleteButton.isEnabled = false
     }
     
@@ -28,20 +34,25 @@ class deleteAssignmentController: UIViewController {
                     if let error = error {
                         print("Error deleting collection: \(error)")
                     } else {
-                        print("Collection deleted successfully!")
-                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                        let MenuVC = storyboard.instantiateViewController(withIdentifier: "teacherMenu")
-                        self.present(MenuVC, animated: true, completion: nil)
+                        self.navControl()
                     }
                 }
             } else {
-                print("Collection does not exist in Firebase Firestore.")
                 self.errorLabel.text = "No Attendance Code in Database"
             }
         }
         
     }
     
+    func navControl(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let MenuVC = storyboard.instantiateViewController(withIdentifier: "teacherMenu")
+        self.present(MenuVC, animated: true, completion: nil)
+    }
+    
+    @IBAction func handleNavBackClick(_ sender: Any) {
+        navControl()
+    }
     // handle no user input
     @IBAction func handleNoInput(_ sender: Any) {
         if codeInputTextField.text == ""{
@@ -61,7 +72,6 @@ class deleteAssignmentController: UIViewController {
         
         collectionRef.getDocuments { (snapshot, error) in
             if let error = error {
-                print("Error retrieving documents: \(error)")
                 completion(false)
                 return
             }
@@ -74,6 +84,11 @@ class deleteAssignmentController: UIViewController {
                 completion(true)
             }
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        codeInputTextField.resignFirstResponder() // Dismiss the keyboard
+        return true
     }
     
     // Delete the Collection Refrenceing from Google Firebase

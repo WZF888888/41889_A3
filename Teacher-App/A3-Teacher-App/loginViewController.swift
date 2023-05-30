@@ -10,6 +10,11 @@ import Firebase
 
 class loginViewController: UIViewController,UITextFieldDelegate {
     
+    //Disable landscape mode
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+    
     @IBOutlet weak var userEmailTextfield: UITextField!
     @IBOutlet weak var passwordInputTextField: UITextField!
     @IBOutlet weak var errorLabel1: UILabel!

@@ -10,9 +10,12 @@ import Firebase
 import FirebaseFirestore
 
 
-class checkAttendanceViewController: UIViewController {
+class checkAttendanceViewController: UIViewController,UITextFieldDelegate {
     
-    
+    //Disable landscape mode
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
     
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var attendanceCodeTextField: UITextField!
@@ -21,9 +24,9 @@ class checkAttendanceViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        attendanceCodeTextField.delegate = self
         searchButton.isEnabled = false
     }
-    
     
     @IBAction func handleNoInput(_ sender: Any) {
         if attendanceCodeTextField.text == ""{
@@ -48,7 +51,6 @@ class checkAttendanceViewController: UIViewController {
             }
         }
         
-
         if !attendanceData.isEmpty {
             let finalattendanceData: [Attendance] = self.attendanceData
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -56,7 +58,11 @@ class checkAttendanceViewController: UIViewController {
             menuVC.attendanceData = finalattendanceData
             self.present(menuVC, animated: true, completion: nil)
         }
-
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        attendanceCodeTextField.resignFirstResponder() // Dismiss the keyboard
+        return true
     }
     
     @IBAction func goBack(_ sender: Any) {
@@ -92,10 +98,6 @@ class checkAttendanceViewController: UIViewController {
 
         }
     }
-    
-    
-    
-    
     
     func checkIfCollectionExists(collectionName: String, completion: @escaping (Bool) -> Void) {
         let db = Firestore.firestore()
