@@ -20,6 +20,7 @@ class checkAttendanceViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var attendanceCodeTextField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
+    var functionDisable: Bool = false
     var attendanceData = [Attendance]()
     
     override func viewDidLoad() {
@@ -54,9 +55,10 @@ class checkAttendanceViewController: UIViewController,UITextFieldDelegate {
         if !attendanceData.isEmpty {
             let finalattendanceData: [Attendance] = self.attendanceData
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let menuVC = storyboard.instantiateViewController(withIdentifier: "tableview") as! tableViewController
-            menuVC.attendanceData = finalattendanceData
-            self.present(menuVC, animated: true, completion: nil)
+            let VC = storyboard.instantiateViewController(withIdentifier: "tableview") as! tableViewController
+            VC.attendanceData = finalattendanceData
+            VC.functionDisable = functionDisable
+            self.present(VC, animated: true, completion: nil)
         }
     }
     
@@ -67,7 +69,8 @@ class checkAttendanceViewController: UIViewController,UITextFieldDelegate {
     
     @IBAction func goBack(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let MenuVC = storyboard.instantiateViewController(withIdentifier: "teacherMenu")
+        let MenuVC = storyboard.instantiateViewController(withIdentifier: "teacherMenu") as! menuViewController
+        MenuVC.functionDisable = functionDisable
         self.present(MenuVC, animated: true, completion: nil)
     }
     

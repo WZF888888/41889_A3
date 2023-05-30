@@ -19,6 +19,7 @@ class deleteAssignmentController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var codeInputTextField: UITextField!
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
+    var functionDisable: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +47,8 @@ class deleteAssignmentController: UIViewController,UITextFieldDelegate {
     
     func navControl(){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let MenuVC = storyboard.instantiateViewController(withIdentifier: "teacherMenu")
+        let MenuVC = storyboard.instantiateViewController(withIdentifier: "teacherMenu") as! menuViewController
+        MenuVC.functionDisable = functionDisable
         self.present(MenuVC, animated: true, completion: nil)
     }
     

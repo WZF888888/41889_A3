@@ -21,6 +21,7 @@ class tableViewController: UIViewController, UITableViewDataSource {
     }
     
     var attendanceData: [Attendance]?
+    var functionDisable: Bool = false
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -32,7 +33,8 @@ class tableViewController: UIViewController, UITableViewDataSource {
     
     @IBAction func goBack(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let VC = storyboard.instantiateViewController(withIdentifier: "checkCode")
+        let VC = storyboard.instantiateViewController(withIdentifier: "checkCode") as! checkAttendanceViewController
+        VC.functionDisable = functionDisable
         self.present(VC, animated: true, completion: nil)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -112,7 +112,8 @@ class createAssignmentViewController: UIViewController,UITextFieldDelegate {
             } else {
                 print("Document added successfully")
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let MenuVC = storyboard.instantiateViewController(withIdentifier: "teacherMenu")
+                let MenuVC = storyboard.instantiateViewController(withIdentifier: "teacherMenu") as! menuViewController
+                MenuVC.functionDisable = true
                 self.present(MenuVC, animated: true, completion: nil)
             }
         }
