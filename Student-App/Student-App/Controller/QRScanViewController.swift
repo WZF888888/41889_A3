@@ -10,6 +10,10 @@ import UIKit
 import Firebase
 
 class QRScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+    //Disable landscape mode
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
     
     var qrCodeData: String?
     var captureSession: AVCaptureSession!
