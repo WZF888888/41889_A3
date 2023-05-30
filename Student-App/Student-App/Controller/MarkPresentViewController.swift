@@ -10,6 +10,10 @@ import UIKit
 import Firebase
 
 class MarkPresentViewController: UIViewController {
+    //Disable landscape mode
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
     
     @IBOutlet weak var emailLabel: UILabel!
     

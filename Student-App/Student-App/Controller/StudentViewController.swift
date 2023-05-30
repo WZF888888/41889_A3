@@ -9,6 +9,10 @@ import Foundation
 import UIKit
 
 class StudentViewController: UIViewController {
+    //Disable landscape mode
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
 
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
@@ -73,5 +77,5 @@ class StudentViewController: UIViewController {
             QRVC.retrievedEmail = email!
         }
     }
-
+    
 }
