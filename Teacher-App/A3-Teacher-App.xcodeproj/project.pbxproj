@@ -52,6 +52,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		38075DAE2A25B0E600E154CF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				38D3159C2A1BAF1C003FE31E /* createAssignmentViewController.swift */,
+				383C30E22A18DC760027A3E0 /* loginViewController.swift */,
+				38D3159E2A23B529003FE31E /* deleteAssignmentController.swift */,
+				38075DA62A24846100E154CF /* menuViewController.swift */,
+				38075DA82A2498B800E154CF /* checkAttendanceViewController.swift */,
+				38075DAA2A24EC2800E154CF /* tableViewController.swift */,
+				38075DAC2A25096400E154CF /* forgetPasswordViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		38075DAF2A25B15F00E154CF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				38F348EE2A18CD090067C617 /* Main.storyboard */,
+				38F348F32A18CD0A0067C617 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		38F348D82A18CD080067C617 = {
 			isa = PBXGroup;
 			children = (
@@ -71,18 +94,11 @@
 		38F348E32A18CD080067C617 /* A3-Teacher-App */ = {
 			isa = PBXGroup;
 			children = (
+				38075DAF2A25B15F00E154CF /* View */,
+				38075DAE2A25B0E600E154CF /* Controller */,
 				38EF8DF52A19C247005382FD /* GoogleService-Info.plist */,
-				383C30E22A18DC760027A3E0 /* loginViewController.swift */,
 				38F348E42A18CD080067C617 /* AppDelegate.swift */,
-				38F348EE2A18CD090067C617 /* Main.storyboard */,
 				38F348F12A18CD0A0067C617 /* Assets.xcassets */,
-				38F348F32A18CD0A0067C617 /* LaunchScreen.storyboard */,
-				38D3159C2A1BAF1C003FE31E /* createAssignmentViewController.swift */,
-				38D3159E2A23B529003FE31E /* deleteAssignmentController.swift */,
-				38075DA62A24846100E154CF /* menuViewController.swift */,
-				38075DA82A2498B800E154CF /* checkAttendanceViewController.swift */,
-				38075DAA2A24EC2800E154CF /* tableViewController.swift */,
-				38075DAC2A25096400E154CF /* forgetPasswordViewController.swift */,
 			);
 			path = "A3-Teacher-App";
 			sourceTree = "<group>";
